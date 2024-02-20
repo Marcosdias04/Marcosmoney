@@ -1,103 +1,182 @@
-<html><head>
-        <title>MASTER CHECKERS MULTIPLAYER</title>
-        <style data-tippy-stylesheet="">.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}</style><link rel="stylesheet" href="css/reset.css" type="text/css">
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <link rel="stylesheet" href="css/orientation_utils.css" type="text/css">
-        <link rel="stylesheet" href="css/ctl-multiplayer-icons.css" type="text/css">
-        <link rel="stylesheet" href="css/animation.css" type="text/css">           
-        <link rel="stylesheet" href="https://api.codethislab.com/gd/moregames.css" type="text/css">
-        <link rel="stylesheet" href="css/ctl-multiplayer.css" type="text/css"> 
-        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">    
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-	<meta name="msapplication-tap-highlight" content="no">
-
-        <script id="gamedistribution-jssdk" src="index2.js"></script><script type="text/javascript" src="js/lib/popper.min.js"></script>
-        <script type="text/javascript" src="js/lib/clipboard.min.js"></script>
-        <script type="text/javascript" src="js/lib/createjs.min.js"></script>
-        <script type="text/javascript" src="js/lib/howler.min.js"></script>
-        <script type="text/javascript" src="https://api.codethislab.com/gd/moregames.js"></script>
-        
-        
-        
-        <script type="text/javascript" src="js/CLang.js"></script>
-        
-        
-        
-        
-        
-        
-        <script type="text/javascript" src="js/main.js"></script>
-        
-    <script type="text/javascript" async="" src="https://pm.azerioncircle.com/p/locus" id="locus"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js" id="gdsdk_google_analytics"></script><script type="text/javascript" async="" src="https://cdn.gamemonkey.org/gamemonkey-sdk-javascript/5.1.1/script/gamemonkey-sdk.js" id="GamedockSDK"></script><script type="text/javascript" async="" crossorigin="anonymous" data-ad-client="ca-pub-2316275586951220" data-ad-frequency-hint="30s" allow="autoplay" data-ad-channel="4089988593" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" id="afg"></script><script type="text/javascript" async="" src="https://hb.improvedigital.com/pbw/headerlift.min.js?referer=html5.gamedistribution.com" id="gdsdk_prebid"></script></head>
-    <body ondragstart="return false;" ondrop="return false;">
-	<div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
-          <script>
-            document.addEventListener("DOMContentLoaded", () =>{
-                    var oMain = new CMain({
-                        audio_enable_on_startup:true, //ENABLE/DISABLE AUDIO WHEN GAME STARTS
-                        check_orientation: false,
-                        fullscreen: false
-                    });
-                                           
-                                           
-                    document.addEventListener("start_session", function(evt) {
-                            
-                    });
-                     
-                    document.addEventListener("end_session", function(evt) {
-                           
-                    });
-                    
-                    document.addEventListener("save_score", function(evt) {
-                        var iWinner = evt.detail.winner;
-                        var iBlackTime = evt.detail.black_time;
-                        var iWhiteTime = evt.detail.white_time;
-                        var iGameType = evt.detail.type;
-                        var iWhiteScore = evt.detail.white_score;
-                        var iBlackScore = evt.detail.black_score;
-                        var iTimeIndex = evt.detail.time_index;
-                        // iWinner: 
-                        // -1 IS DRAW
-                        //0 WHITE WINS
-                        //1 BLACK WINS
-                        //2 WHITE WINS CAUSE BLACK CAN'T MOVE
-                        //3 BLACK WINS CAUSE WHITE CAN'T MOVE
-							
-                            
-                    });
-                     
-                    document.addEventListener("share_event", function(evt) {
-                           
-                    });
-
-
-                    document.addEventListener("show_interlevel_ad", function(evt) {
-                        if (typeof gdsdk !== 'undefined' && gdsdk.showAd !== 'undefined') {
-                            gdsdk.showAd();
-                        }
-                    });
-                     
-                    if(isIOS()){ 
-                        setTimeout(function(){sizeHandler();},200); 
-                    }else{
-                        sizeHandler(); 
+<!doctype html><html lang="en"><head><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayerGPX','GTM-K7CPNRZ');</script><script>function gpxGetCookieKeys () {
+                if (!document.cookie) return [];
+                var _keys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, '').split(/\s*(?:\=[^;]*)?;\s*/);
+                for (var _index = 0; _index < _keys.length; _index++) {
+                    _keys[_index] = decodeURIComponent(_keys[_index]);
+                }
+                return _keys;
+            }
+            function gpxGetCookie (cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) === ' ') {
+                        c = c.substring(1);
                     }
-           });
-        </script>
-        
-        <div class="check-fonts">
-            <p class="check-font-1">RoundedMplus1c</p>
-        </div> 
-        <div class="check-fonts">
-            <p class="check-font-2">ArialRounded</p>
-        </div> 
-        
-        <canvas id="canvas" class="ani_hack" width="1920" height="1920" dir="ltr" style="width: 678px; height: 678px; top: 0px; left: -147px;"> </canvas>
-        <div data-orientation="portrait" class="orientation-msg-container"><p class="orientation-msg-text">Please rotate your device</p></div>
-        <div id="block_game" style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"></div>
-        <div id="div_display_id" style="display: none;"></div>
-    
+                    if (c.indexOf(name) === 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return null;
+            }
+            function gpxSetCookie (name, value, expirationDays = 10000, path="/", domain = location.host) {
+                var expirationDate = new Date();
+                expirationDate.setTime(expirationDate.getTime() + (expirationDays*24*60*60*1000));
+                document.cookie = name+"="+value+";path="+path+"; expires="+expirationDate.toUTCString()+";SameSite=None;Secure;domain="+domain;
+            }
+            function gpxDeleteCookie (name, path="/", domain = location.host) { document.cookie = name+"=;path="+path+";expires=Thu, 01 Jan 1970 00:00:01 GMT;SameSite=None;Secure;domain="+domain};
 
-<div id="4yPxBSeHlPo2RVnnFEb5cB0y6IVbgC78" class="ctl-multiplayer-dlg-wrapper" style="height: 100%;"><div class="ctl-multiplayer-dlg-block"></div><div class="ctl-multiplayer-dlg-content" style="transform: translate(-50%, -50%) scale(1);"><div class="ctl-multiplayer-dlg-header"><h1>Escolha um apelido</h1></div><div class="ctl-multiplayer-dlg-content-body"><input type="text" name="nickname" maxlength="20" value="Jose"></div><div class="ctl-multiplayer-dlg-footer"><button type="button" onclick="on_ctl_multiplayer_send_nickname(&quot;4yPxBSeHlPo2RVnnFEb5cB0y6IVbgC78&quot;);" class="ctl-multiplayer-mini ">ok</button><button type="button" onclick="g_oCTLMultiplayer.closeCurrentDialog(&quot;4yPxBSeHlPo2RVnnFEb5cB0y6IVbgC78&quot;);" class="ctl-multiplayer-mini ">fechar</button><div class="ctl-multiplayer-copyright"><a target="_blank">www.codethislab.com</a></div></div></div></div></body></html>
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+            let getLang = function(){
+				let lang;
+				try {
+					lang = getParameterByName('lang') && getParameterByName('lang').split('-')[0];
+					if (!lang) {
+						lang = navigator.languages && navigator.languages.length
+							? navigator.languages[0].substring(0, 2)
+							: navigator.language.substring(0, 2);
+					}
+                } catch {
+					lang = 'en'
+                }
+				return lang || 'en'
+            }
+
+            var ref = (document.referrer && document.referrer.match(/:\/\/(.[^/]+)/)[1]) || 'direct';
+            // var namespace = location.pathname && location.pathname.split('/').length > 1 ? location.pathname.split('/')[1] : null;
+            // if(namespace) {
+            //     var link = !!document.querySelector("link[rel='canonical']") ? document.querySelector("link[rel='canonical']") : document.createElement('link');
+            //     link.setAttribute('rel', 'canonical');
+            //     link.setAttribute('href', 'https://www.gamepix.com/play/' + namespace + '/');
+            //     document.head.appendChild(link);
+            // }
+
+            //cookie policy enabler, disable cookie policy for some sid
+            let policyExcludedSid = ['110665', '110783']
+            if(policyExcludedSid.indexOf(getParameterByName('sid')) == -1){
+				let lang_id = getLang()
+					, policy_id;
+
+				switch (lang_id) {
+					case 'it':
+						policy_id = 78224144;
+						break;
+					case 'fr':
+						policy_id = 59659549;
+						break;
+					case 'de':
+						policy_id = 40043440;
+						break;
+					case 'es':
+						policy_id = 24193842;
+						break;
+					case 'pt':
+						policy_id = 39895310
+						lang_id = 'pt-BR';
+						break;
+					default:
+						lang_id = 'en';
+						policy_id = 64038034
+						break
+				}
+
+				var _iub = _iub || [];
+				_iub.csConfiguration = {
+					"consentOnContinuedBrowsing": false,
+					"ccpaAcknowledgeOnDisplay": true,
+					"googleAdditionalConsentMode":true,
+					"newConsentAtVendorListUpdate":0,
+					"askConsentAtCookiePolicyUpdate":true,
+					"whitelabel": false,
+					"lang": lang_id,
+					"siteId": 1944774,
+					"enableCcpa": true,
+					"enableTcf":true,
+					"countryDetection": true,
+					"enableRemoteConsent": true,
+					"enableCMP": true,
+					"tcfVersion": 2,
+					// "perPurposeContent":true,
+					// "preferenceCookie": {
+					//     "expireAfter": 1
+					// },
+					"cookiePolicyId": policy_id,
+					// "isTCFConsentGlobal": false,
+					"banner": {
+						"position": "float-bottom-center",
+						// "acceptButtonDisplay": true,
+						// "customizeButtonDisplay": true,
+						// "closeButtonDisplay": false
+						"acceptButtonDisplay": true,
+						"customizeButtonDisplay": true,
+						"closeButtonDisplay": false,
+						"applyStyles": false
+					}
+				};
+				window['gtag_enable_tcf_support'] = true;
+
+				// let patchedIubenda = gpxGetCookie('ptcIub');
+				// if(!patchedIubenda){
+				// 	let cookiesKeys = gpxGetCookieKeys();
+				// 	gpxDeleteCookie('ptc_iub', '/', 'gamepix.com');
+				// 	for(let c of cookiesKeys){
+				// 		if(c.indexOf("euconsent-v2") > -1 || c.indexOf("_iub") > -1){
+				// 			gpxDeleteCookie(c, '/', 'gamepix.com');
+				// 			gpxDeleteCookie(c, '/', 'play.gamepix.com');
+				// 		}
+				// 	}
+				// 	//set Iubenda patched cookie for 1 day
+				// 	gpxSetCookie("ptcIub","true", 7, '/', "gamepix.com");
+				// }
+                var iubendaTcfStubStubScript = document.querySelector("script[src='//cdn.iubenda.com/cs/tcf/stub-v2.js']") ? document.querySelector("script[src='//cdn.iubenda.com/cs/tcf/stub-v2.js']") : document.createElement('script');
+                iubendaTcfStubStubScript.setAttribute('src', '//cdn.iubenda.com/cs/tcf/stub-v2.js');
+                iubendaTcfStubStubScript.setAttribute('type', 'text/javascript');
+                document.head.appendChild(iubendaTcfStubStubScript);
+
+                var iubendaSafeTcfScript = document.querySelector("script[src='//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js']") ? document.querySelector("script[src='//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js']") : document.createElement('script');
+                iubendaSafeTcfScript.setAttribute('src', '//cdn.iubenda.com/cs/tcf/safe-tcf-v2.js');
+                iubendaSafeTcfScript.setAttribute('type', 'text/javascript');
+                document.head.appendChild(iubendaSafeTcfScript);
+
+                var iubendaCcpaStubScript = document.querySelector("script[src='//cdn.iubenda.com/cs/ccpa/stub.js']") ? document.querySelector("script[src='//cdn.iubenda.com/cs/ccpa/stub.js']") : document.createElement('script');
+                iubendaCcpaStubScript.setAttribute('src', '//cdn.iubenda.com/cs/ccpa/stub.js');
+                iubendaCcpaStubScript.setAttribute('type', 'text/javascript');
+                document.head.appendChild(iubendaCcpaStubScript);
+
+                var iubendaCsSript = document.querySelector("script[src='//cdn.iubenda.com/cs/iubenda_cs.js']") ? document.querySelector("script[src='//cdn.iubenda.com/cs/iubenda_cs.js']") : document.createElement('script');
+                iubendaCsSript.setAttribute('src', '//cdn.iubenda.com/cs/iubenda_cs.js');
+                iubendaCsSript.setAttribute('charset', 'UTF-8');
+                iubendaCsSript.setAttribute('type', 'text/javascript');
+                iubendaCsSript.setAttribute('async', 'async');
+                document.head.appendChild(iubendaCsSript);
+            }
+
+
+            var mainColor = "#0e385b";
+            if(getParameterByName('mainColor')){
+                mainColor = "#" + getParameterByName('mainColor');
+                if(mainColor == "#fff" || mainColor == "#ffffff"){
+                    mainColor = "#000000"
+                }
+            };
+
+                //append loader color and html page color
+            var colorStyle = document.createElement("style");
+            colorStyle.innerHTML = ".gpx-loader { color:"+mainColor+" !important; }";
+            document.getElementsByTagName("head")[0].appendChild(colorStyle);</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="robots" content="noindex, follow"><meta name="viewport" content="height=device-height,initial-scale=1,width=device-width,maximum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover"><meta name="mobile-web-app-capable" content="yes"><script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script>// Create Google tag
+            window.googletag = {};
+            googletag.cmd = googletag.cmd || [];</script><link rel="icon" href="/player/favicon.ico"><link rel="stylesheet" href="/player/assets/css/style.css"><link rel="stylesheet" href="/player/assets/UI/style.css"><link href="https://fonts.googleapis.com/css?family=Nunito:400,700&amp;display=swap" rel="stylesheet"><script src="/player/assets/js/safari-nomodule-fix.js" type="module"></script><script defer="defer" type="module" src="/player/assets/js/app.js"></script><link href="/player/assets/css/app.css" rel="stylesheet"><script defer="defer" src="/player/assets/js/app-legacy.js" nomodule></script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7CPNRZ" height="0" width="0" style="display:none;visibility:hidden"></iframe><strong>We're sorry but this player doesn't work without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><div class="gpx-loader"><svg viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg></div></div><a href="#" id="custom-iub-pref" class="iubenda-advertising-preferences-link" style="color:white;position: absolute;bottom: 0;right: 10px;font-size:12px;cursor: default;text-decoration:none;z-index:1"><img width="25px" height="25px" src="/player/assets/img/cookies.png"/></a></body></html>
