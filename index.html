@@ -1,1 +1,26 @@
-<iframe data-v-03b8d43c="" id="game-frame" name="https://play.gamepix.com/master-checkers-multiplayer/embed?sid=e4515" frameborder="0" seamless="seamless" width="50" height="50" scrolling="no" src="https://games.builds.gamepix.com/HMELY/7096841078396944384/index.html?sid=e4515&amp;lang=pt&amp;namespace=master-checkers-multiplayer" class=""></iframe>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html, body {margin: 0; height: 100%; overflow: hidden}
+    </style>
+</head>
+<body>
+    <iframe data-v-03b8d43c="" id="game-frame" src="https://play.gamepix.com/master-checkers-multiplayer/embed?sid=e4515">
+        </iframe>
+</body>
+</html>
+
+<script>
+    window.onload = (event) => {
+        var widthPage = document.getElementsByTagName('body')[0].clientWidth;
+        var heightPage = document.getElementsByTagName('body')[0].clientHeight;
+
+        document.getElementById('content').style.height = heightPage + "px";
+        document.getElementById('content').style.width = widthPage + "px";
+    };
+
+</script>
